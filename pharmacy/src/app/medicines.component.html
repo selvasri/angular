@@ -1,0 +1,47 @@
+<div style="text-align:center">
+    <h1 style="margin:20px">
+      Welcome to {{ title }}!
+    </h1>
+</div>
+
+<h2>Medicine Details</h2>
+  
+  <div>
+    <div>
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Batch No.</th>
+                <th>Expiration Date</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Edit</th>
+                <th>
+                  <a class="btn btn-sm btn-primary">Delete</a>
+                </th>
+              </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let medicine of medicines'>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.manufacturer }}</td>
+            <td>{{ medicine.batchNo }}</td>
+            <td>{{ medicine.expirationDate }}</td>
+            <td>{{ medicine.price | currency:USD:"true" }}</td>
+            <td>{{ medicine.type }}</td>
+            <td>
+              <a [routerLink] = "['/editMedicine', medicine.medicineId]" class="btn btn-sm btn-primary">Edit</a>
+            </td>
+            <td>
+              <a (click)="deleteMedicine(medicine.medicineId)" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <button routerLink="/addMedicine" class="btn btn-primary">Add Medicine</button>
+    </div>
+  </div>
