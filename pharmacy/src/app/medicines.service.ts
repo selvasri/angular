@@ -57,4 +57,19 @@ export class MedicineService extends Init{
         }
         localStorage.setItem('medicines', JSON.stringify(medicines));
       }
+
+      deleteMultipleMedicines(delArray:any[])
+      {
+        let medicines = JSON.parse(localStorage.getItem('medicines'));
+        for (let i=0; i<delArray.length; i++)
+        {
+            for (let j = 0; j < medicines.length; j++) {
+                if (medicines[j].medicineId == delArray[i].medicineId) {
+                    console.log("test if new service");
+                    medicines.splice(j, 1);
+                }
+            }
+        }
+        localStorage.setItem('medicines', JSON.stringify(medicines));
+      }
 }

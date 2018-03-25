@@ -28,14 +28,19 @@
   </div>
   <div class="form-group">
       <label for="expirationDate">Expiration Date</label>
-      <input [ngModel]="medicine.expirationDate" name="expirationDate" id="expirationDate" type="text" class="form-control" required>
+      <input [ngModel]="medicine.expirationDate" name="expirationDate" id="expirationDate" type="text" class="form-control" required placeholder="MM/dd/yyyy">
       <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
         <div>Name is required</div>
     </div>
   </div>
   <div class="form-group">
       <label for="price">Price</label>
-      <input [ngModel]="medicine.price" #priceRef="ngModel" name="price" id="price" type="text" class="form-control" required>
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">$</span>
+        </div>
+        <input [ngModel]="medicine.price" #priceRef="ngModel" name="price" id="price" type="text" class="form-control" required>
+      </div>
       <div *ngIf="priceRef.invalid && (priceRef.dirty || priceRef.touched)" class="alert alert-danger">
         <div *ngIf="priceRef.errors.required">Price is required</div>
        <!-- <div *ngIf="priceRef.errors.number">Please enter number</div> -->

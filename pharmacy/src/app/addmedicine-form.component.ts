@@ -12,7 +12,7 @@ export class AddMedicineFormComponent {
     constructor(private _medicineService: MedicineService, private router: Router) { }
 
     onSave(formValue: any){
-      console.log("Form Value = " + JSON.stringify(formValue, null, 4));
+      //console.log("Form Value = " + JSON.stringify(formValue, null, 4));
       let medicinesCount = this._medicineService.getMedicineCount();
       let newMedicine = {
             medicineId: medicinesCount + 1,

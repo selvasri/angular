@@ -1,14 +1,14 @@
 export class Init {
     load() {
       if (localStorage.getItem('medicines') === null || localStorage.getItem('medicines') == undefined) {
-        console.log("Creating the initial set of medicines ...");
+       // console.log("Creating the initial set of medicines ...");
         var medicines = [
             {
                 medicineId: 1,
                 name: "Mixin",
                 manufacturer: "Naidu's lab",
                 batchNo: "MM2253",
-                expirationDate: "1/1/2022",
+                expirationDate: "1/2/2019",
                 price: 10,
                 type: "Capsule"
       
@@ -18,7 +18,7 @@ export class Init {
                 name: "Cold 24",
                 manufacturer: "Tipla",
                 batchNo: "HH2253",
-                expirationDate: "1/1/2022",
+                expirationDate: "1/3/2020",
                 price: 35,
                 type: "Syrup"
       
@@ -28,7 +28,7 @@ export class Init {
                 name: "Gascure",
                 manufacturer: "Srini Pharma",
                 batchNo: "CD2253",
-                expirationDate: "1/1/2022",
+                expirationDate: "1/4/2020",
                 price: 5,
                 type: "Tablet"
       
@@ -38,7 +38,7 @@ export class Init {
                 name: "Bolo 720",
                 manufacturer: "Moon Pharma",
                 batchNo: "BI2253",
-                expirationDate: "1/1/2022",
+                expirationDate: "1/5/2019",
                 price: 2,
                 type: "Tablet"
       
@@ -48,7 +48,7 @@ export class Init {
                 name: "Ponobet",
                 manufacturer: "Nivas Healthcare",
                 batchNo: "PR2253",
-                expirationDate: "1/1/2022",
+                expirationDate: "1/6/2020",
                 price: 30,
                 type: "Gel"
       
@@ -56,9 +56,9 @@ export class Init {
         ];
         localStorage.setItem('medicines', JSON.stringify(medicines));
       }
-      else {
+     /* else {
         console.log("Loaded the medicines from local storage ...");
-      }
+      } */
     }
   }
   
